@@ -3,8 +3,8 @@ import networkx as nx
 G = nx.read_gml("createGraph.gml")
 
 def max_hops_between_cities(graph, source_city, target_city):
-    distances = nx.shortest_path_length(graph, source=source_city, target=target_city)
-    if distances:
+    distances = nx.shortest_path_length(graph, source=source_city)
+    if target_city in distances:
         return distances[target_city]
     else:
         return None
